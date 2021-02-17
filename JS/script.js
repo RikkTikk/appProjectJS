@@ -66,6 +66,37 @@
 
 //Операторы равенства
 
-console.log(2*4 == '8');        //Сравниваются по значению а не по типу данных
-console.log(2*4 === '8');       //Строгое равно
+// console.log(2*4 == '8');        //Сравниваются по значению а не по типу данных
+// console.log(2*4 === '8');       //Строгое равно
+
+let numberOfFilms,
+    lastNameFilm1,
+    lastNameFilm2,
+    points1,
+    points2;
+numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?");
+lastNameFilm1 = prompt("Один из последних просмотренных фильмов?");
+points1 = prompt("Насколько оцените его?");
+lastNameFilm2 = prompt("И еще один...");
+points2 = prompt("Насколько оцените этот фильм?");
+
+const obj = {
+    count: numberOfFilms,
+    movies: {
+        'lastNameFilm1': 'points1',
+        lastNameFilm2: points2,
+    },
+    actors: {
+
+    },
+    genvers: [],
+    privat: false,
+};
+
+console.log('Количество просмотренных фильмов - ' + obj.count);
+console.log('Просмотренные фильмы и оценка:');
+console.log(obj.movies);
+// console.log(lastNameFilm1 + ' - ' + points1);
+// console.log(lastNameFilm2 + ' - ' + points2);
+
 
