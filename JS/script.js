@@ -1,37 +1,75 @@
 "use strict";       //(директива) разработка проводится в современном режиме
 
-const str = "test";
+let numberOfFilms;
+    
+function start() {
+    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", '');
 
-// console.log(str[2] = 'd');      //Такая схема замены буквы НЕ работает
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", '');
+    }
+}
 
-console.log(str.toUpperCase());
-console.log(str);
+start();
 
-//==========Поиск подстроки
+function detectPersonalLevel() {
+    if (0<numberOfFilms && numberOfFilms<10) {
+        console.log('Просмотрено довольно мало фильмов');
+    } else if (9<numberOfFilms && numberOfFilms<30) {
+        console.log('Вы классический зритель');
+    } else if (29<numberOfFilms) {
+        console.log('Вы киноман!');
+    } else {
+        console.log('Что-то пошло не так');
+    }   
+}
 
-const fruit = 'Some fruit';
+detectPersonalLevel();
 
-console.log(fruit.indexOf('fruit'));
+const personaMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genvers: [],
+    privat: false,
+};
 
-//====Вырезание
 
-const logg = 'hello world';
 
-console.log(logg.slice(6, 10));
-console.log(logg.slice(6));
+function rememberMyFilms () {
+    for (let i=0; i<2; i++) {
+        const lastNameFilm = prompt("Один из последних просмотренных фильмов?", ''),
+            points = +prompt("Насколько оцените его?", '');
+        if (lastNameFilm != null && lastNameFilm != '' && lastNameFilm.length < 50 && points != null && points != '') {
+            personaMovieDB.movies[lastNameFilm] = points;
+        } else {
+            i--;
+        }
+    }
+}
 
-console.log(logg.substring(6, 10));     //Нельзя использовать отрец
+rememberMyFilms();
 
-console.log(logg.substring(6, 5));     //Вторым значение в скобках указывается длинна сколько нужно отрезать
+function writeYourGender() {
+    for (let i = 0; i < 3; i++) {
+        const likeGenvers = prompt("Какой Ваш любимый жанр фильмов?");
+        if (likeGenvers == '' || likeGenvers == null) {
+            alert('Поле не должно оставаться пустым!');
+            i--;
+        } else {
+            personaMovieDB.genvers = likeGenvers;
+        }
+    }
+}
 
-//=====Медоды Math.
+writeYourGender();
 
-const num = 12.2;
-console.log(Math.round(num));       //Округление
+function showMyDB() {
+    if (personaMovieDB.privat === false) {
+        console.log(personaMovieDB);
+    }
+}
 
-const test = '12.2px';
-console.log(parseInt(test));        //перевод в другую систему счисления
-console.log(parseFloat(test));      //Возврат строки в десятичном варианте
-
+showMyDB();
 
 
