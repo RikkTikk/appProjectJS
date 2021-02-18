@@ -1,51 +1,37 @@
 "use strict";       //(директива) разработка проводится в современном режиме
 
-let num = 20;
+const str = "test";
 
-function showFirstMassage(text) {
-    console.log(text);
-    let num = 10;
-}
+// console.log(str[2] = 'd');      //Такая схема замены буквы НЕ работает
 
-showFirstMassage("Hi man");
-console.log(num);
+console.log(str.toUpperCase());
+console.log(str);
 
+//==========Поиск подстроки
 
-// function calc(a, b) {
-//     return(a +b);
-// }
+const fruit = 'Some fruit';
 
-// console.log(calc(4, 5));
-// console.log(calc(8, 5));
-// console.log(calc(4, 6));
+console.log(fruit.indexOf('fruit'));
 
+//====Вырезание
 
-function ret() {
-    let num = 50;
-    return num;
-}
+const logg = 'hello world';
 
-const anotherNum = ret();
-console.log(anotherNum);
+console.log(logg.slice(6, 10));
+console.log(logg.slice(6));
 
+console.log(logg.substring(6, 10));     //Нельзя использовать отрец
 
-//======Эта функуия создается только тогда, когда до нее доходит поток кода и ее можно вызвать только после объявления
+console.log(logg.substring(6, 5));     //Вторым значение в скобках указывается длинна сколько нужно отрезать
 
-const logger = function() {
-    console.log("Heloo");
-};
+//=====Медоды Math.
 
-logger();       //logger в таком случае должно стоять после обьявления функции
+const num = 12.2;
+console.log(Math.round(num));       //Округление
+
+const test = '12.2px';
+console.log(parseInt(test));        //перевод в другую систему счисления
+console.log(parseFloat(test));      //Возврат строки в десятичном варианте
 
 
-//========Стрелочная функция(не имеет контекста вызова)
 
-const calc = (a, b) => { 
-    console.log('1');
-    return a + b;
-};
-
-
-console.log(calc(4, 5));
-console.log(calc(8, 5));
-console.log(calc(4, 6));
