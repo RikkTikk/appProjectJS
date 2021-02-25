@@ -1,25 +1,58 @@
 "use strict";       //(директива) разработка проводится в современном режиме
 
-function first() {
-    setTimeout(function () {
-        console.log(1);
-    }, 500);
-}
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log("Test");
+    }
+};
 
-function second() {
-    console.log(2);
-}
+options.makeTest();
 
-first();
-second();
+// console.log(options["colors"]["border"])
 
-function learnJS(lang, callback) {
-    console.log(`Я учу: ${lang}`);
-    callback();
-}
+// console.log(options.name);
 
-function done() {
-    console.log("Я прошел этот урок!");
-}
+// delete options.name;
 
-learnJS("JavaScript", done);
+// console.log(options);
+
+//Перебор свойств внутри обьекта
+
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object') {
+//         for (let i in (options[key])) {
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//     }
+// }
+
+//Подсчет свойств внутри обьекта
+
+//1) console.log(Object.keys(options).length);
+
+// 2) let counter = 0;
+// for (let key in options) {
+//     // if (typeof(options[key]) === 'object') {
+//     //     for (let i in (options[key])) {
+//     //         console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//     //         counter++;
+//     //     }
+//     // } else {
+//     //     console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//         counter++;
+//     // }
+// }
+
+// console.log(counter);
+
+//Функции и методы которые есть внутри обьекта
+
