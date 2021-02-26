@@ -1,40 +1,49 @@
 "use strict";       //(директива) разработка проводится в современном режиме
 
-const arr = [1, 2, 13, 6, 28];
+let a = 5,
+    b = a;
 
-arr.sort(compareNum);   //Использает алгоритм быстрой сортировки
-console.log(arr);
+b = b + 5;
 
-function compareNum(a, b) {
-    return a - b;
+console.log(b);
+console.log(a);
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// const copy = obj;   //Передача по ссылке
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+//Создание копий
+
+function copy (mainObj) {
+    let objCopy = {};
+    
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    return(objCopy);
 }
 
-// arr.pop();  //Удаляет элемент к конце массива
-// arr.push(10);   //Добавление элемента в конец массива
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
 
+const newNumbers = copy(numbers);
 
-// console.log(arr);
+newNumbers.a =  10;
+newNumbers.c.x = 10;
 
-//Перебор  элементов
-
-// for(let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-// }
-
-// for (let value of arr) {
-//     console.log(value);
-// }
-
-// arr.forEach(function(item, i, arr) {
-//     console.log(`${i}: ${item} внутри массива ${arr}`)
-// });
-
-//
-
-// const str = prompt("", "");
-// const products = str.split(", ");
-// //Метод сортировки виде строки
-// products.sort();
-// console.log(products.join('; '));
-
-//Псевдомассивы - не имеют методов, это просто структура которая хранит данные по порядку
+console.log(newNumbers);
+console.log(numbers);
