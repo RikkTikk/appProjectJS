@@ -1,58 +1,40 @@
 "use strict";       //(директива) разработка проводится в современном режиме
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {
-        console.log("Test");
-    }
-};
+const arr = [1, 2, 13, 6, 28];
 
-options.makeTest();
+arr.sort(compareNum);   //Использает алгоритм быстрой сортировки
+console.log(arr);
 
-// console.log(options["colors"]["border"])
+function compareNum(a, b) {
+    return a - b;
+}
 
-// console.log(options.name);
+// arr.pop();  //Удаляет элемент к конце массива
+// arr.push(10);   //Добавление элемента в конец массива
 
-// delete options.name;
 
-// console.log(options);
+// console.log(arr);
 
-//Перебор свойств внутри обьекта
+//Перебор  элементов
 
-// for (let key in options) {
-//     if (typeof(options[key]) === 'object') {
-//         for (let i in (options[key])) {
-//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
-//         }
-//     } else {
-//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
-//     }
+// for(let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
 // }
 
-//Подсчет свойств внутри обьекта
-
-//1) console.log(Object.keys(options).length);
-
-// 2) let counter = 0;
-// for (let key in options) {
-//     // if (typeof(options[key]) === 'object') {
-//     //     for (let i in (options[key])) {
-//     //         console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
-//     //         counter++;
-//     //     }
-//     // } else {
-//     //     console.log(`Свойство ${key} имеет значение ${options[key]}`);
-//         counter++;
-//     // }
+// for (let value of arr) {
+//     console.log(value);
 // }
 
-// console.log(counter);
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} внутри массива ${arr}`)
+// });
 
-//Функции и методы которые есть внутри обьекта
+//
 
+// const str = prompt("", "");
+// const products = str.split(", ");
+// //Метод сортировки виде строки
+// products.sort();
+// console.log(products.join('; '));
+
+//Псевдомассивы - не имеют методов, это просто структура которая хранит данные по порядку
