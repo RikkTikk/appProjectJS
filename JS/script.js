@@ -1,12 +1,12 @@
 "use strict";       //(директива) разработка проводится в современном режиме
 
-let a = 5,
-    b = a;
+// let a = 5,
+//     b = a;
 
-b = b + 5;
+// b = b + 5;
 
-console.log(b);
-console.log(a);
+// console.log(b);
+// console.log(a);
 
 // const obj = {
 //     a: 5,
@@ -47,3 +47,32 @@ newNumbers.c.x = 10;
 
 console.log(newNumbers);
 console.log(numbers);
+
+const add = {
+    d: 17,
+    e: 20
+};
+
+const clone = Object.assign({}, add);
+
+clone.d = 20;
+
+// console.log(add);
+// console.log(clone);
+
+//Массивы
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'asdasfa';
+console.log(newArray);
+console.log(oldArray);
+
+//Оператор разворота в ES6
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournal', 'bloggers'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];
+
+      console.log(internet);
