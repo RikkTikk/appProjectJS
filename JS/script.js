@@ -16,9 +16,9 @@ const solider = {
     }
 };
 
-const john = {
-    health: 100
-};
+// const john = {
+//     health: 100
+// };
 
 //Старый формат
 
@@ -30,5 +30,17 @@ const john = {
 
 //Новый формат
 
-Object.setPrototypeOf(john, solider);
+// Object.setPrototypeOf(john, solider);
+
+// john.sayHello();
+
+const solider = {
+    health: 400,
+    armor: 100,
+    sayHello: function() {
+        console.log("Hello");
+    }
+};
+const john = Object.create(solider);    //Создаем новый обьект джон который будет прототипно наследоваться от солдата
+
 john.sayHello();
