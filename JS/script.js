@@ -1,64 +1,24 @@
 "use strict";       //(директива) разработка проводится в современном режиме
 
-//Task #1
+const box = document.getElementById('box');
 
-//1)
+console.log(box);
 
-let x = 5;
+const btns = document.getElementsByTagName('button');
 
-alert(++x);
+console.log(btns[1]);
 
-//2)
+const circles = document.getElementsByClassName('circle');
+console.log(circles);
 
-alert([] + false - null + true);    //Когда работаешь с массивом он всегда будет приводить тип данных к строке
+//Современные методы
 
-//3)
+const hearts = document.querySelectorAll('.heart');
 
-let y = 1;
+hearts.forEach(item => {
+    console.log(item);
+});
 
-let x = y = 2;
+const oneHeart = document.querySelector('.heart');
 
-alert(x);
-
-//4)
-
-console.log(alert([] + 1 + 2));
-
-//5)
-
-alert("1",[0]);
-
-//6)
-
-alert(2 && 1 && null && 0 && undefined);    //&& запинается на лжи
-
-//7)
-
-let a = 5,
-    b = 8;
-
-alert(!!(a && b) === (a && b));
-
-
-//8)
-
-alert(null || 2 && 3 || 4);     // || Запинается на правде
-
-//9)
-
-let c = [1, 2, 3],
-    d = [1, 2, 3];
-
-alert(Boolean(c == d));     //Это разные хранилища информации с похожими данными
-
-//10)
-
-alert(+"Infinity");
-
-//11)
-
-console.log(Boolean("Ёжик" > "яблоко"));    //Посимвольное сравнение в соотв с алфавитом(Unicode)
-
-//12)
-
-alert(0 || "" || 2 || undefined || true || false);
+console.log(oneHeart);
