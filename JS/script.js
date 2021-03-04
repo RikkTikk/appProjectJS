@@ -1,59 +1,64 @@
 "use strict";       //(директива) разработка проводится в современном режиме
 
-//Динамическая типизация - возможность одного типа данных превращаться в другой
-
-//To string
+//Task #1
 
 //1)
 
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
+let x = 5;
 
-//2)
-console.log(typeof(null + ''));
-
-const num = 5;
-
-console.log("https://vk.com/catalog/" + num);       //Старая версия написания кода(сейчас исп интерполяция)
-
-const fontSize = 26 + "px";
-
-//To Number
-
-//1)
-
-console.log(typeof(Number('4')));       //Уже не исполльзуют
+alert(++x);
 
 //2)
 
-console.log(typeof(+('5')));        //Современное исполнение через унарный +
+alert([] + false - null + true);
 
 //3)
-console.log(typeof(parseInt('15px', 10)));
+
+let y = 1;
+
+let x = y = 2;
+
+alert(x);
+
+//4)
+
+console.log(alert([] + 1 + 2));
+
+//5)
+
+alert("1",[0]);
+
+//6)
+
+alert(2 && 1 && null && 0 && undefined);
+
+//7)
+
+let a = 5,
+    b = 8;
+
+alert(Boolean(!!(a && b) == (a && b)));
 
 
-let answer = +prompt("Hello", "");
+//8)
 
-//To Boolean
+alert(null || 2 && 3 || 4);
 
-//1)
+//9)
 
-// 0, '', null, undefined, NaN === false
+let c = [1, 2, 3],
+    d = [1, 2, 3];
 
-let switcher = null;
+alert(Boolean(c == d));
 
-if (switcher) {
-    console.log('Working...');
-}
+//10)
 
-switcher = 1;
+alert(+"Infinity");
 
-if (switcher) {
-    console.log('Working...');
-}
+//11)
 
-//2)
-console.log(typeof(Boolean('4')));
+alert(Boolean("Ёжик" > "яблоко"));
 
-//3)
-console.log(typeof(!!"44444"));
+//12)
+
+alert(0 || "" || 2 || undefined || true || false);
