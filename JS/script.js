@@ -10,7 +10,7 @@ alert(++x);
 
 //2)
 
-alert([] + false - null + true);
+alert([] + false - null + true);    //Когда работаешь с массивом он всегда будет приводить тип данных к строке
 
 //3)
 
@@ -30,26 +30,26 @@ alert("1",[0]);
 
 //6)
 
-alert(2 && 1 && null && 0 && undefined);
+alert(2 && 1 && null && 0 && undefined);    //&& запинается на лжи
 
 //7)
 
 let a = 5,
     b = 8;
 
-alert(Boolean(!!(a && b) == (a && b)));
+alert(!!(a && b) === (a && b));
 
 
 //8)
 
-alert(null || 2 && 3 || 4);
+alert(null || 2 && 3 || 4);     // || Запинается на правде
 
 //9)
 
 let c = [1, 2, 3],
     d = [1, 2, 3];
 
-alert(Boolean(c == d));
+alert(Boolean(c == d));     //Это разные хранилища информации с похожими данными
 
 //10)
 
@@ -57,7 +57,7 @@ alert(+"Infinity");
 
 //11)
 
-alert(Boolean("Ёжик" > "яблоко"));
+console.log(Boolean("Ёжик" > "яблоко"));    //Посимвольное сравнение в соотв с алфавитом(Unicode)
 
 //12)
 
